@@ -18,15 +18,15 @@ namespace ConsoleApp2
         {
             if (dir == Direction.UP)
             {
-                ElevatorSystem.Building.floors[floor].HallPanel.UP.PressButton();
+                ElevatorSystem.Building.floors[floor].HallPanel.UP.PressButton(this, floor);
             } else if (dir == Direction.DOWN)
             {
-                ElevatorSystem.Building.floors[floor].HallPanel.DOWN.PressButton();
+                ElevatorSystem.Building.floors[floor].HallPanel.DOWN.PressButton(this, floor);
             }
         }
         public void PressElevatorButton(int elevatorID, int dstFloor)
         {
-            Building.GetInstance().elevators[elevatorID].Panel.Buttons[dstFloor].PressButton();
+            Building.GetInstance().elevators[elevatorID].Panel.Buttons[dstFloor].PressButton(this, dstFloor);
         }
 
     }

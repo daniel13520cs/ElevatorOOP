@@ -24,7 +24,7 @@ namespace ConsoleApp2.Buttons
         public void PressButton(Passenger passenger, int curFloor)
         {
             IsPressed = true;
-            ElevatorSystem.GetInstance().Dispatcher(new Request(passenger, Sign, curFloor));
+            ElevatorSystem.GetInstance().Dispatcher(new Request(passenger, curFloor));
         }
         public void UnPressButton()
         {

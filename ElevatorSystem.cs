@@ -1,4 +1,5 @@
-﻿using ConsoleApp2.Buttons;
+﻿using ConsoleApp2.Algorithm;
+using ConsoleApp2.Buttons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace ConsoleApp2
     {
         public static Building Building { get; set; } = Building.GetInstance();
         private Queue<Request> Requests = new Queue<Request>();
-
+        private IElevatorAlgorithm Algorithm { get; set; } = new FIFO();
         private static ElevatorSystem system = null;
         private ElevatorSystem()
         {
@@ -48,6 +49,15 @@ namespace ConsoleApp2
         {
             ElevatorCar car = Building.elevators[ElevatorID];
             car.Move(floor);
+        }
+
+        public void SetProcessAlgorithm(IElevatorAlgorithm algorithm)
+        {
+            this.Algorithm = algorithm;
+        }
+        public void Process()
+        {
+            this.Algorithm.Process(this.Requests);
         }
 
         #endregion

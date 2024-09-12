@@ -9,15 +9,12 @@ namespace ConsoleApp2
 {
     internal class Request
     {
-        private Passenger Passenger {  get; set; }
-        private Direction Direction { get; set; }
-        private int CurFloor {  get; set; }
-        private int DstFloor {  get; set; }
-        public Request(Passenger Passenger, Direction dir, int dstFloor)
+        public Passenger Passenger {  get; set; }
+        public int DstFloor {  get; set; }
+        public Request(Passenger Passenger, int dstFloor)
         {
             this.Passenger = Passenger;
-            Direction = dir;
-            DstFloor = dstFloor;
+            this.DstFloor = dstFloor;
         }
     }
 }
