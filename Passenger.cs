@@ -14,7 +14,7 @@ namespace ConsoleApp2
             this.ID = ID;
             this.Name = name;
         }
-        public void PressButton(int floor, Direction dir)
+        public void PressHallwayButton(int floor, Direction dir)
         {
             if (dir == Direction.UP)
             {
@@ -23,6 +23,10 @@ namespace ConsoleApp2
             {
                 ElevatorSystem.Building.floors[floor].HallPanel.DOWN.PressButton();
             }
+        }
+        public void PressElevatorButton(int elevatorID, int dstFloor)
+        {
+            Building.GetInstance().elevators[elevatorID].Panel.Buttons[dstFloor].PressButton();
         }
 
     }

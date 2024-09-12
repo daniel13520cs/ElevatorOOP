@@ -11,12 +11,20 @@ namespace ConsoleApp2.Buttons
     {
         public override bool IsPressed { get; set; } = false;
         private int DestinationFloor { get; set; }
-        public ElevatorButton() {
+        private int ElevatorID { get; set; }
+        public ElevatorButton(int ElevatorID, int DestinationFloor) {
+            this.ElevatorID = ElevatorID;
+            this.DestinationFloor = DestinationFloor;
         }
+        public ElevatorButton(int ElevatorID)
+        {
+            this.ElevatorID = ElevatorID;
+        }
+
         public override void PressButton()
         {
             IsPressed = true;
-            ElevatorSystem.GetInstance().CallElavator(DestinationFloor);
+            ElevatorSystem.GetInstance().CallElavator(this.ElevatorID, DestinationFloor);
             UnPressButton();
         }
         public void UnPressButton()

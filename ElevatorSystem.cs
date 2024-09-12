@@ -44,6 +44,11 @@ namespace ConsoleApp2
             ElevatorCar car = SelBestElevatorCar();
             car.Move(floor);
         }
+        public void CallElavator (int ElevatorID, int floor)
+        {
+            ElevatorCar car = Building.elevators[ElevatorID];
+            car.Move(floor);
+        }
 
         #endregion
     }

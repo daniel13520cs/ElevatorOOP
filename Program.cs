@@ -7,8 +7,9 @@ try
     ElevatorSystem system = ElevatorSystem.GetInstance();
     Passenger Daniel = new Passenger(1, "Daniel");
     Passenger Tracy = new Passenger(2, "Tracy");
-    Daniel.PressButton(13, Direction.DOWN);
-    Tracy.PressButton(1, Direction.DOWN);
+    Daniel.PressHallwayButton(13, Direction.DOWN);
+    Daniel.PressElevatorButton(0, 15);
+    //Tracy.PressHallwayButton(1, Direction.DOWN);
 
 }
 catch (Exception ex)

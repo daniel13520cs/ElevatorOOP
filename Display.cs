@@ -15,7 +15,7 @@ namespace ConsoleApp2
         #region method
         public void ShowElevatorDisplay(ElevatorCar car)
         {
-            Console.WriteLine("Elevatory Display : Elevator is currently on " + car.CurrentFloor + "th floor. GOING " + car.State.ToString());
+            Console.WriteLine("Elevator " + car.ID + " Display : Elevator is currently on " + car.CurrentFloor + "th floor. GOING " + car.State.ToString());
         }
         public void ShowHallwayDisplay(Building building, ElevatorCar car)
         {
@@ -23,7 +23,7 @@ namespace ConsoleApp2
             {
                 if (floor.ID == car.CurrentFloor)
                 {
-                    Console.WriteLine("Hallway Display : Elevator is currently on " + car.CurrentFloor + "th floor");
+                    Console.WriteLine(floor.ID + "th Hallway Display : Elevator is currently on " + car.CurrentFloor + "th floor");
                 }
             }
         }

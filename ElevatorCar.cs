@@ -13,7 +13,7 @@ namespace ConsoleApp2
 
         public int ID {  get; set; }
         public ElevatorState State { get; set; }
-        public ElevatorPanel Panel { get; set; } = new ElevatorPanel(15);
+        public ElevatorPanel Panel { get; set; }
         public Door door { get; set; } = new Door();
 
         public int CurrentFloor { get; set; } = MAX_FLOOR;
@@ -27,7 +27,7 @@ namespace ConsoleApp2
         public const int MIN_FLOOR = 1;
 
         public ElevatorCar() {
-            
+            Panel = new ElevatorPanel(ID, MAX_FLOOR);
         }
 
         #region method
@@ -41,6 +41,8 @@ namespace ConsoleApp2
         }
         public void Move(int floor)
         {
+            Display.ShowElevatorDisplay(this);
+            Display.ShowHallwayDisplay(Building.GetInstance(), this);
             while (this.CurrentFloor != floor)
             {
                 Thread.Sleep(1000);
